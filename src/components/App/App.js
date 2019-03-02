@@ -35,7 +35,6 @@ class App extends React.Component {
           <SearchBar />
         </section>
         <section className="book-box" style={{ marginTop: "50px" }}>
-          <BookShelf />
           {
             loading ? <Spinner loading={loading} /> : <BookShelf />
           }

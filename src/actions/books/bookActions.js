@@ -34,26 +34,6 @@ export function getBooks(val) {
   };
 }
 
-// export const getNewBooks = (val) => {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       return (dispatch) => {
-//         return fetch(
-//           `https://www.googleapis.com/books/v1/volumes?q=intitle:${val}&maxResults=9`,
-//           {
-//             method: 'GET',
-//           },
-//         )
-//           .then(response => response.json())
-//           .then((json) => {
-//             dispatch(getBookAction(json));
-//           });
-//       };
-//     });
-//   });
-// };
-
-
 export function searchIndex(val) {
   return {
     type: actionTypes.SEARCH_INDEX,
@@ -87,10 +67,3 @@ export function destroyLoaded() {
     payload: undefined,
   };
 }
-
-// export const setLoaded = new Promise((resolve, reject) => {
-//   resolve({
-//     type: actionTypes.SET_LOADED,
-//     payload: true,
-//   });
-// });

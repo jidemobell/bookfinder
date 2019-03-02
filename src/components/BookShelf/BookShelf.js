@@ -24,18 +24,17 @@ class BookShelf extends React.Component {
       <section className="book-box" style={{ marginTop: "50px" }}>
         <div className="books">
           {
-              loaded ? <FontAwesomeIcon icon={faSpinner} />
-                : Array.isArray(booksArray) && booksArray.map((books) => {
-                  return (
-                    <BookCard
-                      key={`key-${books.etag}`}
-                      title={books.volumeInfo.title}
-                      author={books.volumeInfo.authors[0]}
-                      publisher={books.volumeInfo.publisher}
-                      thumbnail={books.volumeInfo.imageLinks.thumbnail}
-                    />
-                  );
-                })
+            Array.isArray(booksArray) && booksArray.map((books) => {
+              return (
+                <BookCard
+                  key={`key-${books.etag}`}
+                  title={books.volumeInfo.title}
+                  author={books.volumeInfo.authors[0]}
+                  publisher={books.volumeInfo.publisher}
+                  thumbnail={books.volumeInfo.imageLinks.thumbnail}
+                />
+              );
+            })
             }
           {
               booksArray === undefined && (
