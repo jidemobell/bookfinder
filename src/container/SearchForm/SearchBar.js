@@ -43,27 +43,9 @@ class FinderForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  // componentDidUpdate(prevProps, prevState, snapshot) {
-  //   // const { actions, booksArray } = this.props;
-  //   if (this.props !== prevProps) {
-  //      console.log("present at bar", this.props);
-  //      console.log("past at bar", prevProps);
-  //   }
-  // }
   componentDidMount() {
     const { actions } = this.props;
     actions.hideCross();
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const { actions } = this.props;
-    if (nextProps !== this.Props) {
-      console.log("past", this.props);
-      console.log("present", nextProps);
-      // if (nextProps.anyTouched) {
-      //   actions.showCross();
-      // }
-    }
   }
 
   Submit(val) {
@@ -71,21 +53,12 @@ class FinderForm extends React.Component {
     actions.searchIndex(val);
   }
 
-  // handleClick() {
-  //   const { actions } = this.props;
-  //   actions.setLoaded();
-  // }
-
   clearForm() {
     const { actions } = this.props;
     actions.clearAllForm();
     actions.hideCross();
   }
 
-  // toggleCross() {
-  //   const { actions } = this.props;
-  //   actions.showCross();
-  // }
   handleChange() {
     const { actions } = this.props;
     actions.showCross();
@@ -146,8 +119,6 @@ const mapDispatchToProps = (dispatch) => {
 
 const SearchBar = connect(mapStatetToProps, mapDispatchToProps)(reduxForm({
   form: 'booksForm',
-  // onSubmitSuccess: afterSubmit,
-  // onSubmitFail: afterFail,
 })(FinderForm));
 
 export default SearchBar;

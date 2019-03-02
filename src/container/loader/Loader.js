@@ -7,22 +7,16 @@ import { bindActionCreators } from 'redux';
 // import * as actions from '../../actions/books/bookActions';
 
 
-// const override = css`
-//     display: block;
-//     margin: 0 auto;
-//     border-color: red;
-// `;
-
 class Spinner extends React.Component {
   render() {
-    const { loading } = this.props;
+    const { loading, override } = this.props;
     return (
       <div className="sweet-loading">
         <ClipLoader
-          // css={override}
+          css={override}
           sizeUnit="px"
           size={150}
-          color="#123abc"
+          // color="#123abc"
           loading={loading}
         />
       </div>

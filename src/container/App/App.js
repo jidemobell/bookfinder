@@ -6,7 +6,6 @@ import * as actions from '../../actions/books/bookActions';
 import FinderApp from '../../components/App/App';
 
 const mapStateToProps = (state) => {
-  // console.log("state at main", state.stateDate);
   return {
     booksArray: state.stateDate.booklist,
     formsEntry: state.stateDate.index,
