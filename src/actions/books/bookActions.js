@@ -67,3 +67,23 @@ export function destroyLoaded() {
     payload: undefined,
   };
 }
+
+export function clearAllForm() {
+  return {
+    type: actionTypes.CLEAR_FORM,
+  };
+}
+
+export function showCross() {
+  return {
+    type: actionTypes.SHOW_CROSS,
+    payload: "show-span",
+  };
+}
+
+export function hideCross() {
+  return {
+    type: actionTypes.HIDE_CROSS,
+    payload: "hide-span",
+  };
+}

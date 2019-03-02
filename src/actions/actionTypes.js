@@ -4,3 +4,6 @@ export const SEARCH_INDEX = 'SEARCH_INDEX';
 export const SET_LOADED = 'SET_LOADED';
 export const PASS_LOADED = 'PASS_LOADED';
 export const DESTROY_LOADED = 'DESTROY_LOADED';
+export const CLEAR_FORM = 'CLEAR_FORM';
+export const SHOW_CROSS = 'SHOW_CROSS';
+export const HIDE_CROSS = 'HIDE_CROSS';

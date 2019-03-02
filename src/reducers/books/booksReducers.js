@@ -12,6 +12,10 @@ const booksReducer = (state = {}, action) => {
       return { ...state, loading: action.payload };
     case actionTypes.DESTROY_LOADED:
       return { ...state, loading: action.payload };
+    case actionTypes.SHOW_CROSS:
+      return { ...state, spanValue: action.payload };
+    case actionTypes.HIDE_CROSS:
+      return { ...state, spanValue: action.payload };
     default:
       return state;
   }

@@ -11,6 +11,7 @@ const mapStateToProps = (state) => {
     booksArray: state.stateDate.booklist,
     formsEntry: state.stateDate.index,
     loading: state.stateDate.loading,
+    spanValue: state.stateDate.spanValue,
   };
 };
 

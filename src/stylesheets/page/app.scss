@@ -50,7 +50,13 @@ form {
   }
   .first-input {
     display: flex;
-    span {
+    .show-span {
+      margin-left: -60px;
+      margin-top: 7px;
+      padding: 0;
+    }
+    .hide-span {
+      visibility: hidden;
       margin-left: -60px;
       margin-top: 7px;
       padding: 0;

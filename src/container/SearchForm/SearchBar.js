@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { reduxForm, Field, reset, stopSubmit } from 'redux-form';
+import { reduxForm, Field, reset } from 'redux-form';
 
 import * as bookactions from '../../actions/books/bookActions';
 
@@ -28,19 +28,43 @@ const bookField = ({
   </div>
 );
 
-// const afterSubmit = (result, dispatch) => {
-//   dispatch(reset('booksForm'));
-// };
+const afterSubmit = (result, dispatch) => {
+  dispatch(reset('booksForm'));
+};
 
-// const afterFail = (error, dispatch) => {
-//   dispatch(reset('booksForm'));
-// };
+const afterFail = (error, dispatch) => {
+  dispatch(reset('booksForm'));
+};
 
 class FinderForm extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.handleClick = this.handleClick.bind(this);
+  constructor(props) {
+    super(props);
+    this.clearForm = this.clearForm.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  // componentDidUpdate(prevProps, prevState, snapshot) {
+  //   // const { actions, booksArray } = this.props;
+  //   if (this.props !== prevProps) {
+  //      console.log("present at bar", this.props);
+  //      console.log("past at bar", prevProps);
+  //   }
   // }
+  componentDidMount() {
+    const { actions } = this.props;
+    actions.hideCross();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { actions } = this.props;
+    if (nextProps !== this.Props) {
+      console.log("past", this.props);
+      console.log("present", nextProps);
+      // if (nextProps.anyTouched) {
+      //   actions.showCross();
+      // }
+    }
+  }
 
   Submit(val) {
     const { actions } = this.props;
@@ -52,8 +76,23 @@ class FinderForm extends React.Component {
   //   actions.setLoaded();
   // }
 
+  clearForm() {
+    const { actions } = this.props;
+    actions.clearAllForm();
+    actions.hideCross();
+  }
+
+  // toggleCross() {
+  //   const { actions } = this.props;
+  //   actions.showCross();
+  // }
+  handleChange() {
+    const { actions } = this.props;
+    actions.showCross();
+  }
+
   render() {
-    const { submitting, handleSubmit, handleFormSubmit } = this.props;
+    const { submitting, handleSubmit, handleFormSubmit, localeSpan } = this.props;
     return (
       <div>
         <form onSubmit={handleSubmit(val => this.Submit(val))} autoComplete="off">
@@ -65,8 +104,17 @@ class FinderForm extends React.Component {
               component={bookField}
               className="findbar"
               validate={[required, minValue]}
+              defaultValue="test"
+              onChange={(e) => { this.handleChange(); }}
             />
-            <span style={{ fontSize: "20px" }}>X</span>
+            <span
+              style={{ fontSize: "20px" }}
+              className={localeSpan}
+              onClick={this.clearForm}
+              role="presentation"
+            >
+              X
+            </span>
           </div>
           <div className="form-item" style={{ marginBottom: '20px' }}>
             <input
@@ -86,6 +134,7 @@ class FinderForm extends React.Component {
 const mapStatetToProps = (state) => {
   return {
     books: state.stateDate.booklist,
+    localeSpan: state.stateDate.spanValue,
   };
 };
 
