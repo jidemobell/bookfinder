@@ -1,0 +1,71 @@
+@import "../helpers/variables";
+@import "../helpers/mixins";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font: normal 16px sans-serif;
+}
+
+.main {
+  h2 {
+    color: #bcbab8;
+  }
+
+  .find {
+    background: #1ECA88;
+  }
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  .find {
+    margin-left: -50px;
+    background: #1ECA88;
+    padding: 12px;
+    font: {
+      size: 13px;
+    }
+    color: white;
+    border: none;
+    outline: none;
+    width: 100px;
+  }
+
+  .findbar {
+    flex: 1;
+    width: 500px;
+    padding: 10px;
+    outline: none;
+    font: {
+     size: 13px;
+    }
+    color: #555;
+  }
+}
+
+.book-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.books {
+  // background-color: #F4F5F6;
+  // padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  // margin-right: 24px;
+  flex-direction: row;
+  justify-content: center;
+  // overflow-y: auto;
+  .initial-message {
+    margin-top: 150px;
+  }
+}
