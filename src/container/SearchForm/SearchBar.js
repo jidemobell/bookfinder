@@ -22,7 +22,7 @@ const bookField = ({
 }) => (
   <div>
     <div>
-      <input {...input} type={type} placeholder={placeholder} className={className}  />
+      <input {...input} type={type} placeholder={placeholder} className={className} />
     </div>
     {touched && ((error && <p style={{ color: 'red', marginTop: '10px', fontSize: '10px', marginLeft: '150px' }}>{error}</p>))}
   </div>
@@ -37,13 +37,42 @@ const bookField = ({
 // };
 
 class FinderForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  // componentWillReceiveProps(nextProps) {
+  //   const { actions } = this.props;
+  //   if (nextProps !== this.props) {
+  //     console.log('initial', this.props);
+  //     console.log('nextProps', nextProps);
+  //     // if (nextProps.formsEntry.books !== undefined && nextProps.formsEntry.books.length > 0) {
+  //     //   actions.getBooks(nextProps.formsEntry.books);
+  //     //   actions.removeIndex();
+  //     // }
+  //   }
+  // }
+  // componentDidUpdate(prevProps, prevState, snapshot) {
+  //   if (this.props !== prevProps) {
+  //     console.log('present props', this.props); 
+  //     console.log('previous props', prevProps);
+  //   }
+  // }
+
   Submit(val) {
     const { actions } = this.props;
+    // actions.setloaded();
     actions.searchIndex(val);
   }
 
+  handleClick() {
+    const { actions } = this.props;
+    actions.setLoaded();
+  }
+
   render() {
-    const { submitting, handleSubmit, handleFormSubmit } = this.props;
+    const { submitting, handleSubmit } = this.props;
     return (
       <div>
         <form onSubmit={handleSubmit(val => this.Submit(val))} autoComplete="off">
@@ -63,7 +92,7 @@ class FinderForm extends React.Component {
               value="Search"
               className="find"
               disabled={submitting}
-              onClick={handleFormSubmit}
+              onClick={this.handleClick}
             />
           </div>
         </form>
@@ -74,7 +103,7 @@ class FinderForm extends React.Component {
 
 const mapStatetToProps = (state) => {
   return {
-    books: state.booklist,
+    books: state.stateDate.booklist,
   };
 };
 

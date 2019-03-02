@@ -4,14 +4,13 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/books/bookActions';
 
 // import Finder from '../../components/BookShelf/BookShelf';
-import FinderApp from '../../components/App/App';
+import App from '../../components/BookShelf/BookShelf';
 
 const mapStateToProps = (state) => {
-  console.log('state at main find', state);
   return {
     booksArray: state.stateDate.booklist,
     formsEntry: state.stateDate.index,
-    loaded: state.stateDate.loaded,
+    // loaded: false,
   };
 };
 
@@ -21,6 +20,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const App = connect(mapStateToProps, mapDispatchToProps)(FinderApp);
+const BookShelf = connect(mapStateToProps, mapDispatchToProps)(App);
 
-export default App;
+export default BookShelf;

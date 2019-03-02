@@ -12,6 +12,13 @@ function getBookAction(data) {
   };
 }
 
+export function passLoaded() {
+  return {
+    type: actionTypes.PASS_LOADED,
+    payload: false,
+  };
+}
+
 export function getBooks(val) {
   return (dispatch) => {
     return fetch(
@@ -44,5 +51,12 @@ export function removeIndex() {
   return {
     type: actionTypes.SEARCH_INDEX,
     payload: '',
+  };
+}
+
+export function setLoaded() {
+  return {
+    type: actionTypes.SET_LOADED,
+    payload: true,
   };
 }

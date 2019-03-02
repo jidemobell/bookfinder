@@ -1,13 +1,18 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
-import '../stylesheets/main.scss';
+// import '../../stylesheets/main.scss';
 
-import SearchBar from '../container/SearchForm/SearchBar';
-import BookCard from '../container/BookCard/BookCard';
+// import SearchBar from '../../container/SearchForm/SearchBar';
+import BookCard from '../../container/BookCard/BookCard';
 
-class App extends React.Component {
+// const Spinner = <FontAwesomeIcon icon={faSpinner} />;
+
+class BookShelf extends React.Component {
   componentWillReceiveProps(nextProps) {
     const { actions } = this.props;
+    // this.setState({ loading: true });
     if (nextProps !== this.props) {
       console.log('nextProps', nextProps.formsEntry.books);
       if (nextProps.formsEntry.books !== undefined && nextProps.formsEntry.books.length > 0) {
@@ -21,7 +26,7 @@ class App extends React.Component {
   // }
 
   render() {
-    const { booksArray, formsData } = this.props;
+    const { booksArray, loaded } = this.props;
     const textArray = [
       {
         id: 'AW1',
@@ -109,24 +114,11 @@ class App extends React.Component {
       },
     ];
     return (
-      <div className="main">
-        <h2
-          style={
-            { display: "flex",
-              alignItems: "center ",
-              justifyContent: "center",
-              marginBottom: "30px",
-              marginTop: "50px" }}
-        >
-            BOOK FINDER
-        </h2>
-        <section className="form">
-          <SearchBar />
-        </section>
         <section className="book-box" style={{ marginTop: "50px" }}>
           <div className="books">
             {
-              Array.isArray(booksArray) && booksArray.map((books) => {
+              loaded ? <FontAwesomeIcon icon={faSpinner} />
+                : Array.isArray(booksArray) && booksArray.map((books) => {
                 return (
                   <BookCard
                     key={`key-${books.etag}`}
@@ -156,10 +148,9 @@ class App extends React.Component {
             }
           </div>
         </section>
-      </div>
     );
   }
 }
 
 
-export default App;
+export default BookShelf;
