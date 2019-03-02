@@ -8,22 +8,9 @@ import SearchBar from '../../container/SearchForm/SearchBar';
 import BookShelf from '../../container/BookShelf/BookShelf';
 
 class App extends React.Component {
-  // componentWillReceiveProps(nextProps) {
-  //   const { actions } = this.props;
-  //   // this.setState({ loading: true });
-  //   if (nextProps !== this.props) {
-  //     console.log('nextProps', nextProps.formsEntry.books);
-  //     if (nextProps.formsEntry.books !== undefined && nextProps.formsEntry.books.length > 0) {
-  //       actions.getBooks(nextProps.formsEntry.books);
-  //       actions.removeIndex();
-  //     }
-  //   }
-  // }
   componentDidUpdate(prevProps, prevState, snapshot) {
     const { actions, booksArray } = this.props;
     if (this.props !== prevProps) {
-      console.log('present props', this.props); 
-      console.log('previous props', prevProps);
       if (booksArray !== undefined) {
         actions.passLoaded();
       }

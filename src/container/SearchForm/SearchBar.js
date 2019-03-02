@@ -42,27 +42,8 @@ class FinderForm extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   const { actions } = this.props;
-  //   if (nextProps !== this.props) {
-  //     console.log('initial', this.props);
-  //     console.log('nextProps', nextProps);
-  //     // if (nextProps.formsEntry.books !== undefined && nextProps.formsEntry.books.length > 0) {
-  //     //   actions.getBooks(nextProps.formsEntry.books);
-  //     //   actions.removeIndex();
-  //     // }
-  //   }
-  // }
-  // componentDidUpdate(prevProps, prevState, snapshot) {
-  //   if (this.props !== prevProps) {
-  //     console.log('present props', this.props); 
-  //     console.log('previous props', prevProps);
-  //   }
-  // }
-
   Submit(val) {
     const { actions } = this.props;
-    // actions.setloaded();
     actions.searchIndex(val);
   }
 
