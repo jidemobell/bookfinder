@@ -7,7 +7,7 @@ const booksReducer = (state = {}, action) => {
     case actionTypes.SEARCH_INDEX:
       return { ...state, index: action.payload };
     case actionTypes.SET_LOADED:
-      return { ...state, loading: action.payload };
+      return { ...state, loading: action.payload, booklist: undefined };
     case actionTypes.PASS_LOADED:
       return { ...state, loading: action.payload };
     case actionTypes.DESTROY_LOADED:

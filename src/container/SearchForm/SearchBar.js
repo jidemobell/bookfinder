@@ -57,7 +57,7 @@ class FinderForm extends React.Component {
     return (
       <div>
         <form onSubmit={handleSubmit(val => this.Submit(val))} autoComplete="off">
-          <div className="form-item" style={{ marginBottom: '20px' }}>
+          <div className="form-item first-input" style={{ marginBottom: '20px' }}>
             <Field
               type="input"
               name="books"
@@ -66,6 +66,7 @@ class FinderForm extends React.Component {
               className="findbar"
               validate={[required, minValue]}
             />
+            <span style={{ fontSize: "20px" }}>X</span>
           </div>
           <div className="form-item" style={{ marginBottom: '20px' }}>
             <input
