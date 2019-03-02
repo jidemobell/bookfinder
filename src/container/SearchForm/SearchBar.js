@@ -37,23 +37,23 @@ const bookField = ({
 // };
 
 class FinderForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.handleClick = this.handleClick.bind(this);
+  // }
 
   Submit(val) {
     const { actions } = this.props;
     actions.searchIndex(val);
   }
 
-  handleClick() {
-    const { actions } = this.props;
-    actions.setLoaded();
-  }
+  // handleClick() {
+  //   const { actions } = this.props;
+  //   actions.setLoaded();
+  // }
 
   render() {
-    const { submitting, handleSubmit } = this.props;
+    const { submitting, handleSubmit, handleFormSubmit } = this.props;
     return (
       <div>
         <form onSubmit={handleSubmit(val => this.Submit(val))} autoComplete="off">
@@ -73,7 +73,7 @@ class FinderForm extends React.Component {
               value="Search"
               className="find"
               disabled={submitting}
-              onClick={this.handleClick}
+              onClick={handleFormSubmit}
             />
           </div>
         </form>

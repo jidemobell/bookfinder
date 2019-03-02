@@ -1,11 +1,10 @@
 import React from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 import '../../stylesheets/main.scss';
 
 import SearchBar from '../../container/SearchForm/SearchBar';
 import BookShelf from '../../container/BookShelf/BookShelf';
+import Spinner from '../../container/loader/Loader';
 
 class App extends React.Component {
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -13,12 +12,13 @@ class App extends React.Component {
     if (this.props !== prevProps) {
       if (booksArray !== undefined) {
         actions.passLoaded();
+        actions.destroyLoaded();
       }
     }
   }
 
   render() {
-    const { booksArray, loaded } = this.props;
+    const { loading } = this.props;
     return (
       <div className="main">
         <h2
@@ -36,6 +36,9 @@ class App extends React.Component {
         </section>
         <section className="book-box" style={{ marginTop: "50px" }}>
           <BookShelf />
+          {
+            loading ? <Spinner loading={loading} /> : <BookShelf />
+          }
         </section>
       </div>
     );

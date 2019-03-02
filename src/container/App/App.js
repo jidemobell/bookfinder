@@ -3,15 +3,14 @@ import { bindActionCreators } from 'redux';
 
 import * as actions from '../../actions/books/bookActions';
 
-// import Finder from '../../components/BookShelf/BookShelf';
 import FinderApp from '../../components/App/App';
 
 const mapStateToProps = (state) => {
-  console.log('state at main find', state);
+  // console.log("state at main", state.stateDate);
   return {
     booksArray: state.stateDate.booklist,
     formsEntry: state.stateDate.index,
-    loaded: state.stateDate.loaded,
+    loading: state.stateDate.loading,
   };
 };
 

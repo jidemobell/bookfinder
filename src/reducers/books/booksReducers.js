@@ -10,6 +10,8 @@ const booksReducer = (state = {}, action) => {
       return { ...state, loading: action.payload };
     case actionTypes.PASS_LOADED:
       return { ...state, loading: action.payload };
+    case actionTypes.DESTROY_LOADED:
+      return { ...state, loading: action.payload };
     default:
       return state;
   }

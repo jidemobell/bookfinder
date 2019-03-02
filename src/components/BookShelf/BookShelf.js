@@ -9,8 +9,11 @@ class BookShelf extends React.Component {
     const { actions } = this.props;
     if (nextProps !== this.props) {
       if (nextProps.formsEntry.books !== undefined && nextProps.formsEntry.books.length > 0) {
-        actions.getBooks(nextProps.formsEntry.books);
-        actions.removeIndex();
+        setTimeout(() => {
+          actions.getBooks(nextProps.formsEntry.books);
+          actions.removeIndex();
+        }, 3000);
+        actions.setLoaded();
       }
     }
   }

@@ -11,6 +11,7 @@
   "author": "jide olaniyan",
   "license": "ISC",
   "dependencies": {
+    "@emotion/core": "^10.0.7",
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
@@ -24,6 +25,7 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-redux": "^6.0.1",
+    "react-spinners": "^0.5.1",
     "redux": "^4.0.1",
     "redux-form": "^8.1.0",
     "redux-thunk": "^2.3.0"
