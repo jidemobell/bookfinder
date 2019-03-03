@@ -2,7 +2,7 @@
   background: white;
   color: #B5ACB6;
   width: 350px;
-  margin: 20px;
+  margin: 25px;
   height: 150px;
   display: flex;
   padding-right: 20px;
@@ -11,16 +11,20 @@
     bottom: 10px;
     left: 10px;
   }
-  box-shadow: 1px 1px 5px 0px #00000069;
+  box-shadow: 1px 1px 5px 0px #0000003b;
   flex: {
     direction: row;
   }
+  opacity: 0;
+  animation: 1s fadein 0.5s forwards;
   .preview {
     flex-basis: 30%;
     margin-right: 20px;
     margin-top: -20px;
     img {
       width: 100px;
+      height: 150px;
+      box-shadow: 1px -1px 7px 0px #00000052
     }
   }
   .details {
@@ -39,6 +43,10 @@
     text-align: center;
     padding: 7px;
     width: 100px;
+    a {
+      color: white;
+      text-decoration: none;
+    }
   }
   .upper {
     font: {
@@ -52,5 +60,11 @@
     p {
       font-size: 13px;
     }
+  }
+}
+
+@keyframes fadein {
+  100% {
+    opacity: 1;
   }
 }

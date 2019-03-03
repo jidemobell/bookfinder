@@ -27,6 +27,7 @@ module.exports = {
     "object-curly-newline":0,
     "no-unused-vars":0,
     "react/jsx-one-expression-per-line":0,
-    'no-plusplus': 'off'
+    'no-plusplus': 'off',
+    'react/jsx-no-target-blank' : 0
   }
 }

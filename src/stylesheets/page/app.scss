@@ -10,12 +10,12 @@
 
 html {
   font: normal 16px sans-serif;
-  color: #555;
+  background: rgba(197, 197, 197, 0.452);
 }
 
 .main {
   h2 {
-    color: #AEB4BA;
+    color: rgb(135, 139, 143);
     font-weight: bolder;
   }
 
@@ -85,7 +85,7 @@ form {
   justify-content: center;
   .initial-message {
     margin-top: 150px;
-    color: #AEB4BA;
+    color: rgb(136, 144, 151);
     font-size: 20px;
   }
 }

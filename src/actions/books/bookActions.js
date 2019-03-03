@@ -5,10 +5,26 @@ import * as actionTypes from '../actionTypes';
  * books
  */
 
+function fetcher(url, options, time) {
+  return Promise.race([
+    fetch(url, options),
+    new Promise((resolve, reject) => {
+      setTimeout(() => reject(new Error(`timeout error: `)), time);
+    }),
+  ]);
+}
+
+function handleError() {
+  return {
+    type: actionTypes.SEARCH_ERROR,
+    payload: 'timeout',
+  };
+}
+
 function getBookAction(data) {
   return {
     type: actionTypes.FIND_BOOKS,
-    payload: data.items,
+    payload: data.totalItems > 0 ? data.items : 0,
   };
 }
 
@@ -19,18 +35,35 @@ export function passLoaded() {
   };
 }
 
+// export function getBooks(val) {
+//   return (dispatch) => {
+//     return fetch(
+//       `https://www.googleapis.com/books/v1/volumes?q=intitle:${val}&maxResults=12`,
+//       {
+//         method: 'GET',
+//       },
+//     )
+//       .then(response => response.json())
+//       .then((json) => {
+//         dispatch(getBookAction(json));
+//       });
+//   };
+// }
+
 export function getBooks(val) {
   return (dispatch) => {
-    return fetch(
+    return fetcher(
       `https://www.googleapis.com/books/v1/volumes?q=intitle:${val}&maxResults=12`,
       {
         method: 'GET',
       },
+      7000,
     )
       .then(response => response.json())
       .then((json) => {
         dispatch(getBookAction(json));
-      });
+      })
+      .catch(error => dispatch(handleError(error)));
   };
 }
 

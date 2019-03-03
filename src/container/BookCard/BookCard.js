@@ -5,7 +5,7 @@ import * as actions from '../../actions/books/bookActions';
 
 class Books extends React.Component {
   render() {
-    const { title, author, publisher, thumbnail } = this.props;
+    const { title, author, publisher, thumbnail, previewLink } = this.props;
     return (
       <div className="card">
         <div className="preview">
@@ -17,7 +17,11 @@ class Books extends React.Component {
             <p>By: {author}</p>
             <p>Published By: {publisher}</p>
           </div>
-          <button type="submit">See this Book</button>
+          <button type="submit">
+            <a href={previewLink} target="_blank" rel="noopener nonreferrer">
+              See this Book
+            </a>
+          </button>
         </div>
       </div>
     );

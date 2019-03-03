@@ -16,6 +16,8 @@ const booksReducer = (state = {}, action) => {
       return { ...state, spanValue: action.payload };
     case actionTypes.HIDE_CROSS:
       return { ...state, spanValue: action.payload };
+    case actionTypes.SEARCH_ERROR:
+      return { ...state, booklist: action.payload };
     default:
       return state;
   }

@@ -7,3 +7,4 @@ export const DESTROY_LOADED = 'DESTROY_LOADED';
 export const CLEAR_FORM = 'CLEAR_FORM';
 export const SHOW_CROSS = 'SHOW_CROSS';
 export const HIDE_CROSS = 'HIDE_CROSS';
+export const SEARCH_ERROR = 'SEARCH_ERROR';
