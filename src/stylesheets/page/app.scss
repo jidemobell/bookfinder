@@ -11,6 +11,9 @@
 html {
   font: normal 16px sans-serif;
   background: rgba(197, 197, 197, 0.452);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main {
@@ -87,5 +90,21 @@ form {
     margin-top: 150px;
     color: rgb(136, 144, 151);
     font-size: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+
+  form {
+    .findbar {
+      flex: 1;
+      width: 300px;
+    }
+  }
+
+  .books {
+    .initial-message {
+      font-size: 13px;
+    }
   }
 }
