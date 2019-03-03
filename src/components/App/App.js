@@ -19,12 +19,6 @@ class App extends React.Component {
 
   render() {
     const { loading } = this.props;
-    const override = `
-    display: block;
-    margin: 0 auto;
-    border-color: red;
-    color: black;
-`;
     return (
       <div className="main">
         <h2
@@ -42,7 +36,7 @@ class App extends React.Component {
         </section>
         <section className="book-box" style={{ marginTop: "50px" }}>
           {
-            loading ? <Spinner loading={loading} override={override} /> : <BookShelf />
+            loading ? <Spinner loading={loading} /> : <BookShelf />
           }
         </section>
       </div>

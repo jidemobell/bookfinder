@@ -10,11 +10,13 @@
 
 html {
   font: normal 16px sans-serif;
+  color: #555;
 }
 
 .main {
   h2 {
-    color: #bcbab8;
+    color: #AEB4BA;
+    font-weight: bolder;
   }
 
   .find {
@@ -53,13 +55,19 @@ form {
     .show-span {
       margin-left: -60px;
       margin-top: 7px;
+      font-size: 5px;
       padding: 0;
+      color: #AEB4BA;
+      cursor: pointer;
     }
     .hide-span {
       visibility: hidden;
       margin-left: -60px;
       margin-top: 7px;
+      font-size: 5px;
       padding: 0;
+      color: #AEB4BA;
+      cursor: pointer;
     }
   }
 }
@@ -71,15 +79,13 @@ form {
 }
 
 .books {
-  // background-color: #F4F5F6;
-  // padding: 15px;
   display: flex;
   flex-wrap: wrap;
-  // margin-right: 24px;
   flex-direction: row;
   justify-content: center;
-  // overflow-y: auto;
   .initial-message {
     margin-top: 150px;
+    color: #AEB4BA;
+    font-size: 20px;
   }
 }

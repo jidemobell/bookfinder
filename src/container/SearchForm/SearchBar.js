@@ -86,7 +86,7 @@ class FinderForm extends React.Component {
               onClick={this.clearForm}
               role="presentation"
             >
-              X
+              x
             </span>
           </div>
           <div className="form-item" style={{ marginBottom: '20px' }}>
