@@ -1,13 +1,18 @@
 {
-  "name": "chfinder",
+  "name": "bookfinder",
   "version": "1.0.0",
   "description": "a bookfinder for chingu prework",
   "main": "index.js",
   "scripts": {
     "test": "mocha --require setup.js --require @babel/register --require ignore-styles",
     "dev": "webpack-dev-server --hot --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "deploy": "gh-pages -d dist"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jidemobell/bookfinder.git"
+},
   "author": "jide olaniyan",
   "license": "ISC",
   "dependencies": {
