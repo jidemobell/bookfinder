@@ -35,21 +35,6 @@ export function passLoaded() {
   };
 }
 
-// export function getBooks(val) {
-//   return (dispatch) => {
-//     return fetch(
-//       `https://www.googleapis.com/books/v1/volumes?q=intitle:${val}&maxResults=12`,
-//       {
-//         method: 'GET',
-//       },
-//     )
-//       .then(response => response.json())
-//       .then((json) => {
-//         dispatch(getBookAction(json));
-//       });
-//   };
-// }
-
 export function getBooks(val) {
   return (dispatch) => {
     return fetcher(
