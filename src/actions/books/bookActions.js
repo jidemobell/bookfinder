@@ -21,7 +21,7 @@ function handleError() {
   };
 }
 
-function getBookAction(data) {
+export function getBookAction(data) {
   return {
     type: actionTypes.FIND_BOOKS,
     payload: data.totalItems > 0 ? data.items : 0,
