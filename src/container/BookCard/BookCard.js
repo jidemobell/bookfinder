@@ -4,6 +4,11 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/books/bookActions';
 
 class Books extends React.Component {
+  // handleLink() {
+  //   const { previewLink } = this.props;
+  //   history.pushState(`/${previewLink}`);
+  // }
+
   render() {
     const { title, author, publisher, thumbnail, previewLink } = this.props;
     return (
@@ -17,11 +22,11 @@ class Books extends React.Component {
             <p>By: {author}</p>
             <p>Published By: {publisher}</p>
           </div>
-          <button type="submit">
-            <a href={previewLink}>
+          {/* <button type="submit"> */}
+          <a href={previewLink} target="_blank" className="btn">
               See this Book
-            </a>
-          </button>
+          </a>
+          {/* </button> */}
         </div>
       </div>
     );

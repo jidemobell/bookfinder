@@ -35,19 +35,23 @@
       direction: column;
     }
   }
-  button {
+  .btn {
     border-radius: 4px;
     background: #1ECA88;
+    cursor: pointer;
     color: white;
     border: none;
     text-align: center;
     padding: 7px;
-    width: 100px;
+    width: 130px;
+    font-size: 13px;
+    text-decoration: none;
     cursor: pointer;
-    a {
-      color: white;
-      text-decoration: none;
-    }
+    // a {
+    //   color: white;
+    //   text-decoration: none;
+    //   cursor: pointer;
+    // }
   }
   .upper {
     font: {
