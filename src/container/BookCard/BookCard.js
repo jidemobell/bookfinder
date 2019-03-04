@@ -17,10 +17,8 @@ class Books extends React.Component {
             <p>By: {author}</p>
             <p>Published By: {publisher}</p>
           </div>
-          <button type="submit">
-            <a href={previewLink} target="_blank" rel="noopener nonreferrer">
-              See this Book
-            </a>
+          <button type="submit" onClick={() => window.open(`${previewLink}`)}>
+            See this Book
           </button>
         </div>
       </div>
